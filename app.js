@@ -16,52 +16,31 @@ $(document).ready(() => {
   $("#btnSubmit").click((e) => {
     e.preventDefault();
     let text = $("#box").val();
-    let newH2 = $("<h2>" + text + "</h2>")
+    // let newH2 = $("<h2>" + text + "</h2>")
     // $('#display').append();
-    newH2.mouseover(() => {
-      newH2.css({
-        "background-color": "red",
-        "border-radius": "5px"
-      })
-    });
-    $(".body").append('<ul id=list></ul>');
-    $("#list").append('<li id=listItem></li>')
-    $('#listItem').append(text);
-    let colors = rgb(Math.random()*255,Math.random()*255,Math.random()*255);
-     $(#listItem).click((e)=>{
-      e.preventDefault();
-      $(#listItem).css("color",colors);
-     });
+    // newH2.mouseover(() => {
+    //   newH2.css({
+    //     "background-color": "red",
+    //     "border-radius": "5px"
+    //   })
+    // });
     // $("#h2Div").append(newH2)
-    
+    let mainList = ("<ul id=main-list></ul>");
+    let list = $("<li id=list>" + text + "</li>");
+    list.css("list-style", "none");
+    $("#h2Div").append(mainList);
+    $("#main-list").append(list);
+    let colors = '#'+Math.floor(Math.random()*16777215).toString(16);
+    $("#list").click(() => {
+      $("#list").css("color",colors);
+    });
+
+    $("#list").dblclick(() => {
+      $("#list").remove();
+    });
+
     alert(text);
   });
-
-
-  // $(".body").append('<ul id=list></ul>');
-  // $("#btnSubmit").click(()=>{
-  //   let text = $("#box").val();
-  //   $("#list").append('<li id=listItem></li>')
-  //   $('#listItem').append(text);
-  //   alert(text);
-  // });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
 
 });
