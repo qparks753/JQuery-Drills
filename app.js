@@ -16,6 +16,7 @@ $(document).ready(() => {
   $("#btnSubmit").click((e) => {
     e.preventDefault();
     let text = $("#box").val();
+    //The below text comment out the h2 that would be displayed on the body
     // let newH2 = $("<h2>" + text + "</h2>")
     // $('#display').append();
     // newH2.mouseover(() => {
